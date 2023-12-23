@@ -16,4 +16,4 @@ jobs:
           curl -X POST \
               -H 'Content-Type: application/json' \
               -d '{"text": "A new tag has been created!"}' \
-              {}
+              $REMOTE_CALL_URL
