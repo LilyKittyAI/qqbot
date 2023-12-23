@@ -1,0 +1,19 @@
+name: trigger_remote_deploy
+
+on:
+  create:
+    tags:
+      - v*
+    branchs:
+      - "main"
+
+jobs:
+  send-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call_webhook
+        run: |
+          curl -X POST \
+              -H 'Content-Type: application/json' \
+              -d '{"text": "A new tag has been created!"}' \
+              {}
