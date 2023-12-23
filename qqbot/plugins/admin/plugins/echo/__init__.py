@@ -1,9 +1,9 @@
 from typing import Annotated
-from nonebot import get_driver
-from nonebot.plugin import PluginMetadata
-from nonebot import on_command
+
+from nonebot import get_driver, on_command
 from nonebot.adapters import Message
-from nonebot.params import RawCommand, CommandArg, Event
+from nonebot.params import CommandArg
+from nonebot.plugin import PluginMetadata
 from nonebot.rule import to_me
 
 from .config import Config
