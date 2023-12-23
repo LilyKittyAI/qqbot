@@ -12,8 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call_webhook
-        run: |
-          curl -X POST \
-              -H 'Content-Type: application/json' \
-              -d '{"text": "A new tag has been created!"}' \
-              $REMOTE_CALL_URL
+        run: curl -X POST ${{ vars.REMOTE_CALL_URL }}
