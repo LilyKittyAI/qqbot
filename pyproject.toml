@@ -1,0 +1,36 @@
+[project]
+name = "qqbot"
+version = "0.1.0"
+description = "qqbot"
+readme = "README.md"
+requires-python = ">=3.8, <4.0"
+
+[tool.nonebot]
+adapters = [
+    { name = "QQ", module_name = "nonebot.adapters.qq" }
+]
+plugins = []
+plugin_dirs = []
+builtin_plugins = []
+
+[tool.poetry]
+name = "qqbot"
+version = "0.1.0"
+description = "lilykitty as qqbot"
+authors = ["PiSquad"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+nb-cli = "^1.2.8"
+setuptools = "^69.0.2"
+nonebot2 = {extras = ["websockets"], version = "^2.1.2"}
+nonebot-adapter-qq = "^1.3.4"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
