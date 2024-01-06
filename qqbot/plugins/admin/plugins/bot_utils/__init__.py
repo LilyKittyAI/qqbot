@@ -9,8 +9,8 @@ from nonebot.rule import to_me
 from .config import Config
 
 __plugin_meta__ = PluginMetadata(
-    name="echo",
-    description="",
+    name="bot_utils",
+    description="机器人管理有关命令",
     usage="",
     config=Config,
 )
@@ -19,9 +19,9 @@ global_config = get_driver().config
 config = Config.parse_obj(global_config)
 
 
-echo = on_command("echo", rule=to_me(), block=True)
+Echo = on_command("echo", rule=to_me(), block=True)
 
 
-@echo.handle()
+@Echo.handle()
 async def _(message: Annotated[Message, CommandArg()]):
-    await echo.finish(message.extract_plain_text())
+    await Echo.finish(message.extract_plain_text())
