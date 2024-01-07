@@ -6,6 +6,8 @@ from nonebot.params import CommandArg
 from nonebot.plugin import PluginMetadata
 from nonebot.rule import to_me
 
+from qqbot.utils import get_version_info
+
 from .config import Config
 
 __plugin_meta__ = PluginMetadata(
@@ -25,3 +27,11 @@ Echo = on_command("echo", rule=to_me(), block=True)
 @Echo.handle()
 async def _(message: Annotated[Message, CommandArg()]):
     await Echo.finish(message.extract_plain_text())
+
+
+Version = on_command("version", rule=to_me(), block=True)
+
+
+@Version.handle()
+async def _():
+    await Version.finish("LilyKitty QQbot " ".".join(get_version_info()))
