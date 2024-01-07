@@ -34,4 +34,4 @@ Version = on_command("version", rule=to_me(), block=True)
 
 @Version.handle()
 async def _():
-    await Version.finish("LilyKitty QQbot " ".".join(map(str, get_version_info())))
+    await Version.finish("LilyKitty QQbot " + ".".join(map(str, get_version_info())))
